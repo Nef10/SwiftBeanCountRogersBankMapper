@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SwiftBeanCountRogersBankMapper  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+
+    <a title="SwiftBeanCountRogersBankMapper  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          SwiftBeanCountRogersBankMapper Docs
+        </a>
+         (100% documented)
+      </p>
+    
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/Nef10/SwiftBeanCountRogersBankMapper">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2FNef10.github.io%2FSwiftBeanCountRogersBankMapper%2Fdocsets%2FSwiftBeanCountRogersBankMapper.xml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">SwiftBeanCountRogersBankMapper Reference</a>
+      <img class="carat" src="img/carat.png" />
+      SwiftBeanCountRogersBankMapper  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/RogersBankMappingError.html">RogersBankMappingError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/SwiftBeanCountRogersBankMapper.html">SwiftBeanCountRogersBankMapper</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <h1 id='swiftbeancountrogersbankmapper' class='heading'>SwiftBeanCountRogersBankMapper</h1>
+
+<p><a href="https://github.com/Nef10/RogersBankDownloader/actions?query=workflow%3A%22CI%22"><img src="https://github.com/Nef10/SwiftBeanCountRogersBankMapper/workflows/CI/badge.svg?event=push" alt="CI Status"></a> <a href="https://nef10.github.io/SwiftBeanCountRogersBankMapper/"><img src="https://nef10.github.io/SwiftBeanCountRogersBankMapper/badge.svg" alt="Documentation percentage"></a> <a href="https://github.com/Nef10/SwiftBeanCountRogersBankMapper/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Nef10/SwiftBeanCountRogersBankMapper" alt="License: MIT"></a> <a href="https://github.com/Nef10/SwiftBeanCountRogersBankMapper/releases"><img src="https://img.shields.io/github/v/release/Nef10/SwiftBeanCountRogersBankMapper?label=SemVer&sort=semver" alt="Latest version"></a> <img src="https://img.shields.io/badge/platform-linux%20%7C%20macOS%20%7C%20iOS%20%7C%20watchOS%20%7C%20tvOS-blue" alt="platforms supported: linux | macOS | iOS | watchOS | tvOS"> <img src="https://img.shields.io/badge/SPM-compatible-blue" alt="SPM compatible"></p>
+<h3 id='strong-em-this-project-is-part-for-swiftbeancount-please-check-out-the-main-documentation-a-href-https-github-com-nef10-swiftbeancount-here-a-em-strong' class='heading'><strong><em>This project is part for SwiftBeanCount, please check out the main documentation <a href="https://github.com/Nef10/SwiftBeanCount">here</a>.</em></strong></h3>
+<h2 id='what' class='heading'>What</h2>
+
+<p>This is a small library to convert downloaded data from Wealthsimple (via <a href="https://github.com/Nef10/RogersBankDownloader">RogersBankDownloader</a>) to the Beancount format (via <a href="https://github.com/Nef10/SwiftBeanCountModel">SwiftBeanCountModel</a>).</p>
+<h2 id='beancount-meta-data' class='heading'>Beancount meta data</h2>
+
+<p>The library relies on meta data in your Beancount file to find your accounts. Please add <code>rogers-bank-last-four: &quot;XXXX&quot;</code> with the last four digits of your number to your Credit Card Liability account.</p>
+<h2 id='how' class='heading'>How</h2>
+
+<p>1) Load your ledger, e.g. via  <a href="https://github.com/Nef10/SwiftBeanCountParser">SwiftBeanCountParser</a>
+2) Create an instance of <code><a href="Structs/SwiftBeanCountRogersBankMapper.html">SwiftBeanCountRogersBankMapper</a></code> using the ledger
+3) Dowload the accounts and activities you want to convert via the <a href="https://github.com/Nef10/RogersBankDownloader">RogersBankDownloader</a>
+4) Use <code>mapAccountToBalance</code> and <code>mapActivitiesToTransactions</code> on the mapper to convert the downloaded data</p>
+
+<p>Please also check out the complete documentation <a href="https://nef10.github.io/SwiftBeanCountRogersBankMapper/">here</a>.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>The library supports the Swift Package Manger, so simply add a dependency in your <code>Package.swift</code>:</p>
+<pre class="highlight plaintext"><code>.package(url: "https://github.com/Nef10/SwiftBeanCountRogersBankMapper.git", .exact(from: "0.0.1")),
+</code></pre>
+
+<p>Please note that following semantic versioning every release before version 1.0.0 might be breaking, so use <code>.exact</code> for now.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="https://github.com/Nef10" target="_blank" rel="noopener" rel="external">Nef10</a>. All rights reserved. (Last updated: 2021-08-16)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="noopener" rel="external">jazzy ♪♫ v0.14.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="noopener" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
